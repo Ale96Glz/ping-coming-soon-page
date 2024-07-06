@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --clr-primaty-blue: hsl(223, 87%, 63%);
+
+  --secondary-pale-blue: hsl(223, 100%, 88%);
+  --secondary-light-red: hsl(354, 100%, 66%);
+
+  --clr-neutral-gray: hsl(0, 0%, 59%);
+  --clr-neutral-very-dark-blue: hsl(209, 33%, 12%);
+
+  --fs-body: 20px;
+  --fw-normal: 300;
+  --fw-bold: 600;
+  --fw-extra-bold: 700;
+  --ff-franklin: "Libre Franklin", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+body {
+  display: grid;
+  justify-content: center;
+  height: 100vh;
+  font-family: var(--ff-franklin);
+  font-size: var(--fs-body);
+  padding-inline: 30px;
+}
+
+main {
+  max-width: 900px;
+  text-align: center;
+  margin-block-start: 70px;
+
+  & h1 {
+    margin-block-start: 45px;
+    color: var(--clr-neutral-gray);
+    font-weight: var(--fw-normal);
+    font-size: 24px;
+
+    & span {
+      color: var(--clr-neutral-very-dark-blue);
+      font-weight: var(--fw-extra-bold);
+    }
+  }
+
+  & p {
+    margin-block-start: 20px;
+    font-size: 16px;
+  }
+
+  & .form {
+    margin-block-start: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    & .input-container{
+      display: flex;
+      flex-direction: column;
+    }
+
+    & input {
+      padding: 8px 25px;
+      border-radius: 25px;
+      border: solid 1px var(--secondary-pale-blue);
+
+      &::placeholder {
+        color: var(--secondary-pale-blue);
+        font-size: 14px;
+      }
+    }
+
+    & button {
+      background-color: var(--clr-primaty-blue);
+      color: white;
+      font-size: 14px;
+      padding: 10px 25px;
+      border-radius: 25px;
+      border: none;
+      font-weight: var(--fw-bold);
+      display: block;
+      width: 100%;
+    }
+  }
+
+  & .hero {
+    margin-block-start: 60px;
+    & img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  & .socials {
+    margin-block-start: 70px;
+
+    & ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+
+      & li {
+        width: 30px;
+        height: 30px;
+        border-radius: 100px;
+        border: solid 1px var(--secondary-pale-blue);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      & .fa-brands {
+        color: var(--clr-primaty-blue);
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+footer {
+  margin-block: 25px;
+  color: var(--clr-neutral-gray);
+  font-size: 13px;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 5px;
+  text-align: center;
+}
+
+@media screen and (width >= 768px) {
+  main {
+    & .form {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+}
